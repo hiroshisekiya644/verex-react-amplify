@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+:root {
+  --font-opensans: var(--font-opensans);
+  --background: #ffffff;
+  --foreground: #171717;
+  --white-hsl: 0, 0%, 100%;
+  --black-hsl: 0, 0%, 0%;
+  --safeLightAccent-hsl: 11.73, 82.49%, 57.45%;
+  --safeDarkAccent-hsl: 11.73, 82.49%, 57.45%;
+  --safeInverseAccent-hsl: 0, 0%, 100%;
+  --safeInverseLightAccent-hsl: 0, 0%, 100%;
+  --safeInverseDarkAccent-hsl: 0, 0%, 100%;
+  --accent-hsl: 11.73, 82.49%, 57.45%;
+  --lightAccent-hsl: 125.79, 58.23%, 48.82%;
+  --darkAccent-hsl: 0, 0%, 21.96%;
+  --primary-button-rounded-border-top-left-radius: 6.4px;
+  --primary-button-rounded-border-top-right-radius: 6.4px;
+  --primary-button-rounded-border-bottom-left-radius: 6.4px;
+  --primary-button-rounded-border-bottom-right-radius: 6.4px;
+  --primaryButtonPadding: 1.2em;
+  --primary-button-padding-x: 2.2rem;
+  --primary-button-padding-y: 1.5rem;
+  --primary-button-stroke: 0px;
+  --secondary-button-rounded-border-top-left-radius: 6.4px;
+  --secondary-button-rounded-border-top-right-radius: 6.4px;
+  --secondary-button-rounded-border-bottom-left-radius: 6.4px;
+  --secondary-button-rounded-border-bottom-right-radius: 6.4px;
+  --secondary-button-padding-x: 2.2rem;
+  --secondary-button-padding-y: 1.5rem;
+  --secondary-button-stroke: 1px;
+  --tertiary-button-rounded-border-top-left-radius: 6.4px;
+  --tertiary-button-rounded-border-top-right-radius: 6.4px;
+  --tertiary-button-rounded-border-bottom-left-radius: 6.4px;
+  --tertiary-button-rounded-border-bottom-right-radius: 6.4px;
+  --tertiary-button-padding-x: 2.2rem;
+  --tertiary-button-padding-y: 1.5rem;
+  --tertiary-button-stroke: 2px;
+  --form-field-shape-border-top-left-radius: 10px;
+  --form-field-shape-border-top-right-radius: 10px;
+  --form-field-shape-border-bottom-left-radius: 10px;
+  --form-field-shape-border-bottom-right-radius: 10px;
+  --form-field-border-thickness: 1px;
+  --form-field-padding-vertical: 5px;
+  --form-field-padding-horizontal: 10px;
+  --form-field-checkbox-shape-border-top-left-radius: 5px;
+  --form-field-checkbox-shape-border-top-right-radius: 5px;
+  --form-field-checkbox-shape-border-bottom-left-radius: 5px;
+  --form-field-checkbox-shape-border-bottom-right-radius: 5px;
+  --form-field-checkbox-border-thickness: 1px;
+  --form-field-checkbox-size: 20px;
+  --form-field-checkbox-space-between-icon-and-text: 11px;
+  --form-field-checkbox-padding-vertical: 5px;
+  --form-field-checkbox-padding-horizontal: 15px;
+  --form-field-checkbox-row-gap: 10px;
+  --form-field-checkbox-column-gap: 10px;
+  --form-field-radio-shape-border-top-left-radius: 5px;
+  --form-field-radio-shape-border-top-right-radius: 5px;
+  --form-field-radio-shape-border-bottom-left-radius: 5px;
+  --form-field-radio-shape-border-bottom-right-radius: 5px;
+  --form-field-radio-border-thickness: 1px;
+  --form-field-radio-size: 20px;
+  --form-field-radio-space-between-icon-and-text: 11px;
+  --form-field-radio-padding-vertical: 5px;
+  --form-field-radio-padding-horizontal: 15px;
+  --form-field-radio-row-gap: 10px;
+  --form-field-radio-column-gap: 10px;
+  --form-field-dropdown-icon-thickness: 1px;
+  --form-field-dropdown-icon-size: 18px;
+  --form-field-survey-shape-border-top-left-radius: 5px;
+  --form-field-survey-shape-border-top-right-radius: 5px;
+  --form-field-survey-shape-border-bottom-left-radius: 5px;
+  --form-field-survey-shape-border-bottom-right-radius: 5px;
+  --form-field-survey-border-thickness: 1px;
+  --form-field-survey-size: 20px;
+  --form-label-spacing-bottom: 4px;
+  --form-description-spacing-bottom: 4px;
+  --form-caption-spacing-bottom: 2px;
+  --form-field-spacing-bottom: 20px;
+  --form-field-column-gap: 10px;
+
+  --dynamic-border-color: var(--tweak-form-block-field-border-color);
+  --dynamic-border-color-hsl: var(--tweak-form-block-field-border-color-hsl);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-opensans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  /* background: var(--background); */
+  /* color: var(--foreground); */
+  background: #000;
+  color: #fff;
+  font-family: var(--font-opensans);
+}
+
+.color-primary {
+  color: hsl(var(--accent-hsl));
+}
+
+.color-secondary {
+  color: hsl(var(--lightAccent-hsl));
+}
+
+.header-wrapper {
+  /* position: relative; */
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  padding-left: 0;
+  padding-right: 0;
+  pointer-events: auto;
+}
+
+.header-title-nav-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1 0 67%;
+  align-items: center;
+  padding-bottom: 2vw;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-title-logo {
+  width: auto;
+  font-size: 0;
+}
+
+.header-title-logo img {
+  width: auto;
+  max-width: 100%;
+  max-height: 147px;
+}
+
+.header-nav {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.header-layout-nav-right .header-nav {
+  text-align: right;
+  margin-left: auto;
+  padding-left: 3.9vw;
+}
+
+.header-nav-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.header-layout-nav-right .header-nav-list {
+  justify-content: flex-start;
+}
+
+.header-nav-list>div {
+  white-space: nowrap;
+}
+
+.header-nav-list>div:not(.header-nav-item--folder) {
+  display: inline-flex;
+}
+
+.header-nav-item {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  border-bottom: 2px solid hsl(var(--accent-hsl));
+}
+
+.header-layout-nav-right .header-nav-item:not(:first-child):not(.header-actions-action--cart) {
+  margin-left: 3.8vw;
+}
+
+.header-nav-item a {
+  color: hsl(var(--accent-hsl));
+}
+
+/* Search Area */
+.search-container {
+  width: 100%;
+}
+
+.search-title {
+  color: hsl(var(--accent-hsl));
+  font-weight: bold;
+}
+
+.search-title span {
+  text-transform: uppercase;
+}
+
+.search-title .info-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.search-box-input {
+  min-height: 150px;
+  width: 100%;
+  height: 4em;
+  border-radius: 10px;
+  border: solid var(--form-field-border-thickness) var(--dynamic-border-color, #A9A9A9);
+  box-shadow: 0 0 0 1px transparent;
+  color: #fff;
+  padding: 10px;
+}
+
+.hint-w-button {
+  width: 100%;
+  padding-bottom: 7.5px;
+}
+
+.hint-title {
+  color: hsl(var(--accent-hsl));
+  border-bottom: 2px solid hsl(var(--accent-hsl));
+  padding-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hint-title:hover {
+  cursor: pointer;
+}
+
+.hint-w-button p {
+  color: #fff;
+  text-align: right;
+}
+
+.submit-button {
+  background-color: hsl(var(--accent-hsl));
+  color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
+
+.signal-metrics {
+  width: 100%;
+}
+
+.signal-metrics-title {
+  color: #fff;
+  font-weight: bold;
+}
+
+.signal-metrics-title span:first-child {
+  text-transform: uppercase;
+}
+
+.signal-metrics-title .info-icon {
+  cursor: pointer;
+  display: inline-block;
+  color: hsl(var(--accent-hsl));
+}
+
+.signal-metrics-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.signal-metrics-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4em;
+  border: 2px solid hsl(var(--lightAccent-hsl));
+}
+
+.signal-metrics-item .heading {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.search-history-content {
+  width: 100%;
+}
+
+.search-history-content table {
+  width: 100%;
+}
+
+.search-history-content table th {
+  text-align: left;
+  color: hsl(var(--accent-hsl));
+  padding-bottom: 10px;
+}
+
+.search-history-content table td {
+  text-align: left;
+}
+
+.search-history-content table td:first-child {
+  font-weight: bold;
+  text-transform: uppercase;
+}
